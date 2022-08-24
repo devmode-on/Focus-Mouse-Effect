@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Effect |Dev Mode</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+
+  <section class="focus__container">
+    <div class="focus focus--back"><span>Focus</span></div>
+    <div class="focus focus--front"><span>Focus</span></div>
+
+    <div class="focus__circle"></div>
+  </section>
+
+
+<!-- JS -->
+<script>
+  const circle = document.querySelector('.focus__circle');
+  const focusFront = document.querySelector('.focus--front');
+
+  document.addEventListener('mousemove', (event) => {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    focusFront.style = `clip-path: circle(10em at ${mouseX}px ${mouseY}px);`;
+    circle.style = `transform: translate(${mouseX}px, ${mouseY}px)`;
+
+  })
+
+</script>
+
+</body>
+</html>
